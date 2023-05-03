@@ -119,5 +119,80 @@
     </None>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart %284%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart %285%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart %286%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart %287%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart %288%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart %289%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart %2810%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart %2811%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart %2812%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart %2813%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart %2814%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart %2815%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart %2816%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart %2817%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart %2818%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart %2819%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart %2820%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart %2821%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart %2823%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart %2824%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart %2825%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
