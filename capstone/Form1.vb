@@ -166,4 +166,28 @@ Public Class Form1
     Private Sub btnL_Click(sender As Object, e As EventArgs) Handles btnL.Click
         btnL.Enabled = False
     End Sub
+
+    Private Sub btnX_Click(sender As Object, e As EventArgs) Handles btnX.Click
+        btnX.Enabled = False
+    End Sub
+
+    Private Sub btnC_Click(sender As Object, e As EventArgs) Handles btnC.Click
+        btnC.Enabled = False
+    End Sub
+
+    Private Sub btnV_Click(sender As Object, e As EventArgs) Handles btnV.Click
+        btnV.Enabled = False
+    End Sub
+
+    Private Sub btnB_Click(sender As Object, e As EventArgs) Handles btnB.Click
+        btnB.Enabled = False
+    End Sub
+
+    Private Sub btnN_Click(sender As Object, e As EventArgs) Handles btnN.Click
+        btnB.Enabled = False
+    End Sub
+
+    Private Sub btnM_Click(sender As Object, e As EventArgs) Handles btnM.Click
+        btnM.Enabled = False
+    End Sub
 End Class
