@@ -22,6 +22,7 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.btnY = New System.Windows.Forms.Button()
         Me.btnL = New System.Windows.Forms.Button()
         Me.btnP = New System.Windows.Forms.Button()
@@ -52,14 +53,23 @@ Partial Class Form1
         Me.lblWord = New System.Windows.Forms.Label()
         Me.picWheel = New System.Windows.Forms.PictureBox()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.lstRandom = New System.Windows.Forms.ListBox()
+        Me.lblBox = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.TimerMain = New System.Windows.Forms.Timer(Me.components)
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OpenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.picWheel, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'btnY
         '
         Me.btnY.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnY.Location = New System.Drawing.Point(1039, 494)
-        Me.btnY.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnY.Margin = New System.Windows.Forms.Padding(4)
         Me.btnY.Name = "btnY"
         Me.btnY.Size = New System.Drawing.Size(100, 28)
         Me.btnY.TabIndex = 58
@@ -70,7 +80,7 @@ Partial Class Form1
         '
         Me.btnL.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnL.Location = New System.Drawing.Point(1381, 558)
-        Me.btnL.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnL.Margin = New System.Windows.Forms.Padding(4)
         Me.btnL.Name = "btnL"
         Me.btnL.Size = New System.Drawing.Size(100, 28)
         Me.btnL.TabIndex = 57
@@ -81,7 +91,7 @@ Partial Class Form1
         '
         Me.btnP.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnP.Location = New System.Drawing.Point(1471, 494)
-        Me.btnP.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnP.Margin = New System.Windows.Forms.Padding(4)
         Me.btnP.Name = "btnP"
         Me.btnP.Size = New System.Drawing.Size(100, 28)
         Me.btnP.TabIndex = 56
@@ -92,7 +102,7 @@ Partial Class Form1
         '
         Me.btnT.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnT.Location = New System.Drawing.Point(931, 494)
-        Me.btnT.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnT.Margin = New System.Windows.Forms.Padding(4)
         Me.btnT.Name = "btnT"
         Me.btnT.Size = New System.Drawing.Size(100, 28)
         Me.btnT.TabIndex = 55
@@ -103,7 +113,7 @@ Partial Class Form1
         '
         Me.btnO.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnO.Location = New System.Drawing.Point(1363, 494)
-        Me.btnO.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnO.Margin = New System.Windows.Forms.Padding(4)
         Me.btnO.Name = "btnO"
         Me.btnO.Size = New System.Drawing.Size(100, 28)
         Me.btnO.TabIndex = 54
@@ -113,7 +123,7 @@ Partial Class Form1
         'btnI
         '
         Me.btnI.Location = New System.Drawing.Point(1255, 494)
-        Me.btnI.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnI.Margin = New System.Windows.Forms.Padding(4)
         Me.btnI.Name = "btnI"
         Me.btnI.Size = New System.Drawing.Size(100, 28)
         Me.btnI.TabIndex = 53
@@ -124,7 +134,7 @@ Partial Class Form1
         '
         Me.btnU.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnU.Location = New System.Drawing.Point(1147, 494)
-        Me.btnU.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnU.Margin = New System.Windows.Forms.Padding(4)
         Me.btnU.Name = "btnU"
         Me.btnU.Size = New System.Drawing.Size(100, 28)
         Me.btnU.TabIndex = 52
@@ -135,7 +145,7 @@ Partial Class Form1
         '
         Me.btnK.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnK.Location = New System.Drawing.Point(1273, 558)
-        Me.btnK.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnK.Margin = New System.Windows.Forms.Padding(4)
         Me.btnK.Name = "btnK"
         Me.btnK.Size = New System.Drawing.Size(100, 28)
         Me.btnK.TabIndex = 51
@@ -146,7 +156,7 @@ Partial Class Form1
         '
         Me.btnS.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnS.Location = New System.Drawing.Point(625, 558)
-        Me.btnS.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnS.Margin = New System.Windows.Forms.Padding(4)
         Me.btnS.Name = "btnS"
         Me.btnS.Size = New System.Drawing.Size(100, 28)
         Me.btnS.TabIndex = 50
@@ -157,7 +167,7 @@ Partial Class Form1
         '
         Me.btnD.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnD.Location = New System.Drawing.Point(733, 558)
-        Me.btnD.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnD.Margin = New System.Windows.Forms.Padding(4)
         Me.btnD.Name = "btnD"
         Me.btnD.Size = New System.Drawing.Size(100, 28)
         Me.btnD.TabIndex = 49
@@ -168,7 +178,7 @@ Partial Class Form1
         '
         Me.btnH.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnH.Location = New System.Drawing.Point(1057, 558)
-        Me.btnH.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnH.Margin = New System.Windows.Forms.Padding(4)
         Me.btnH.Name = "btnH"
         Me.btnH.Size = New System.Drawing.Size(100, 28)
         Me.btnH.TabIndex = 48
@@ -179,7 +189,7 @@ Partial Class Form1
         '
         Me.btnJ.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnJ.Location = New System.Drawing.Point(1165, 558)
-        Me.btnJ.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnJ.Margin = New System.Windows.Forms.Padding(4)
         Me.btnJ.Name = "btnJ"
         Me.btnJ.Size = New System.Drawing.Size(100, 28)
         Me.btnJ.TabIndex = 47
@@ -190,7 +200,7 @@ Partial Class Form1
         '
         Me.btnR.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnR.Location = New System.Drawing.Point(823, 494)
-        Me.btnR.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnR.Margin = New System.Windows.Forms.Padding(4)
         Me.btnR.Name = "btnR"
         Me.btnR.Size = New System.Drawing.Size(100, 28)
         Me.btnR.TabIndex = 46
@@ -201,7 +211,7 @@ Partial Class Form1
         '
         Me.Button13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button13.Location = New System.Drawing.Point(597, 494)
-        Me.Button13.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Button13.Margin = New System.Windows.Forms.Padding(4)
         Me.Button13.Name = "Button13"
         Me.Button13.Size = New System.Drawing.Size(100, 28)
         Me.Button13.TabIndex = 45
@@ -212,7 +222,7 @@ Partial Class Form1
         '
         Me.btnE.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnE.Location = New System.Drawing.Point(705, 494)
-        Me.btnE.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnE.Margin = New System.Windows.Forms.Padding(4)
         Me.btnE.Name = "btnE"
         Me.btnE.Size = New System.Drawing.Size(100, 28)
         Me.btnE.TabIndex = 44
@@ -223,7 +233,7 @@ Partial Class Form1
         '
         Me.btnQ.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnQ.Location = New System.Drawing.Point(-159, 191)
-        Me.btnQ.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnQ.Margin = New System.Windows.Forms.Padding(4)
         Me.btnQ.Name = "btnQ"
         Me.btnQ.Size = New System.Drawing.Size(100, 28)
         Me.btnQ.TabIndex = 43
@@ -234,7 +244,7 @@ Partial Class Form1
         '
         Me.btnC.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnC.Location = New System.Drawing.Point(764, 624)
-        Me.btnC.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnC.Margin = New System.Windows.Forms.Padding(4)
         Me.btnC.Name = "btnC"
         Me.btnC.Size = New System.Drawing.Size(100, 28)
         Me.btnC.TabIndex = 42
@@ -245,7 +255,7 @@ Partial Class Form1
         '
         Me.btnX.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnX.Location = New System.Drawing.Point(656, 622)
-        Me.btnX.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnX.Margin = New System.Windows.Forms.Padding(4)
         Me.btnX.Name = "btnX"
         Me.btnX.Size = New System.Drawing.Size(100, 28)
         Me.btnX.TabIndex = 41
@@ -256,7 +266,7 @@ Partial Class Form1
         '
         Me.btnV.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnV.Location = New System.Drawing.Point(872, 624)
-        Me.btnV.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnV.Margin = New System.Windows.Forms.Padding(4)
         Me.btnV.Name = "btnV"
         Me.btnV.Size = New System.Drawing.Size(91, 27)
         Me.btnV.TabIndex = 40
@@ -267,7 +277,7 @@ Partial Class Form1
         '
         Me.btnB.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnB.Location = New System.Drawing.Point(971, 623)
-        Me.btnB.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnB.Margin = New System.Windows.Forms.Padding(4)
         Me.btnB.Name = "btnB"
         Me.btnB.Size = New System.Drawing.Size(100, 28)
         Me.btnB.TabIndex = 39
@@ -278,7 +288,7 @@ Partial Class Form1
         '
         Me.btnZ.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnZ.Location = New System.Drawing.Point(-105, 319)
-        Me.btnZ.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnZ.Margin = New System.Windows.Forms.Padding(4)
         Me.btnZ.Name = "btnZ"
         Me.btnZ.Size = New System.Drawing.Size(100, 28)
         Me.btnZ.TabIndex = 38
@@ -289,7 +299,7 @@ Partial Class Form1
         '
         Me.btnN.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnN.Location = New System.Drawing.Point(1079, 622)
-        Me.btnN.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnN.Margin = New System.Windows.Forms.Padding(4)
         Me.btnN.Name = "btnN"
         Me.btnN.Size = New System.Drawing.Size(100, 28)
         Me.btnN.TabIndex = 37
@@ -300,7 +310,7 @@ Partial Class Form1
         '
         Me.btnG.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnG.Location = New System.Drawing.Point(949, 558)
-        Me.btnG.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnG.Margin = New System.Windows.Forms.Padding(4)
         Me.btnG.Name = "btnG"
         Me.btnG.Size = New System.Drawing.Size(100, 28)
         Me.btnG.TabIndex = 36
@@ -311,7 +321,7 @@ Partial Class Form1
         '
         Me.btnF.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnF.Location = New System.Drawing.Point(841, 558)
-        Me.btnF.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnF.Margin = New System.Windows.Forms.Padding(4)
         Me.btnF.Name = "btnF"
         Me.btnF.Size = New System.Drawing.Size(100, 28)
         Me.btnF.TabIndex = 35
@@ -322,7 +332,7 @@ Partial Class Form1
         '
         Me.btnA.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnA.Location = New System.Drawing.Point(-141, 255)
-        Me.btnA.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnA.Margin = New System.Windows.Forms.Padding(4)
         Me.btnA.Name = "btnA"
         Me.btnA.Size = New System.Drawing.Size(100, 28)
         Me.btnA.TabIndex = 34
@@ -333,7 +343,7 @@ Partial Class Form1
         '
         Me.btnM.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnM.Location = New System.Drawing.Point(1187, 622)
-        Me.btnM.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnM.Margin = New System.Windows.Forms.Padding(4)
         Me.btnM.Name = "btnM"
         Me.btnM.Size = New System.Drawing.Size(100, 28)
         Me.btnM.TabIndex = 33
@@ -344,7 +354,7 @@ Partial Class Form1
         '
         Me.btnExit.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnExit.Location = New System.Drawing.Point(1295, 609)
-        Me.btnExit.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnExit.Margin = New System.Windows.Forms.Padding(4)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(252, 57)
         Me.btnExit.TabIndex = 32
@@ -375,19 +385,86 @@ Partial Class Form1
         'Button1
         '
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(104, 436)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Button1.Location = New System.Drawing.Point(340, 431)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(217, 63)
         Me.Button1.TabIndex = 61
         Me.Button1.Text = "Spin"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'lstRandom
+        '
+        Me.lstRandom.FormattingEnabled = True
+        Me.lstRandom.ItemHeight = 16
+        Me.lstRandom.Location = New System.Drawing.Point(1572, 127)
+        Me.lstRandom.Margin = New System.Windows.Forms.Padding(4)
+        Me.lstRandom.Name = "lstRandom"
+        Me.lstRandom.Size = New System.Drawing.Size(209, 276)
+        Me.lstRandom.TabIndex = 62
+        '
+        'lblBox
+        '
+        Me.lblBox.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.lblBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblBox.Location = New System.Drawing.Point(37, 449)
+        Me.lblBox.Name = "lblBox"
+        Me.lblBox.Size = New System.Drawing.Size(129, 45)
+        Me.lblBox.TabIndex = 63
+        Me.lblBox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label1
+        '
+        Me.Label1.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(1601, 463)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(239, 48)
+        Me.Label1.TabIndex = 64
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
+        'TimerMain
+        '
+        Me.TimerMain.Interval = 1
+        '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(1924, 30)
+        Me.MenuStrip1.TabIndex = 65
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'FileToolStripMenuItem
+        '
+        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OpenToolStripMenuItem})
+        Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
+        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(46, 26)
+        Me.FileToolStripMenuItem.Text = "File"
+        '
+        'OpenToolStripMenuItem
+        '
+        Me.OpenToolStripMenuItem.Name = "OpenToolStripMenuItem"
+        Me.OpenToolStripMenuItem.Size = New System.Drawing.Size(128, 26)
+        Me.OpenToolStripMenuItem.Text = "Open"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1660, 832)
+        Me.ClientSize = New System.Drawing.Size(1924, 832)
+        Me.Controls.Add(Me.MenuStrip1)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.lblBox)
+        Me.Controls.Add(Me.lstRandom)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.picWheel)
         Me.Controls.Add(Me.lblWord)
@@ -418,11 +495,14 @@ Partial Class Form1
         Me.Controls.Add(Me.btnA)
         Me.Controls.Add(Me.btnM)
         Me.Controls.Add(Me.btnExit)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Form1"
         Me.Text = "Form1"
         CType(Me.picWheel, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -456,4 +536,12 @@ Partial Class Form1
     Friend WithEvents lblWord As Label
     Friend WithEvents picWheel As PictureBox
     Friend WithEvents Button1 As Button
+    Friend WithEvents lstRandom As ListBox
+    Friend WithEvents lblBox As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents OpenFileDialog1 As OpenFileDialog
+    Friend WithEvents TimerMain As Timer
+    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents FileToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents OpenToolStripMenuItem As ToolStripMenuItem
 End Class
