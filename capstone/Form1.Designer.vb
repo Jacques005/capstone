@@ -374,7 +374,7 @@ Partial Class Form1
         'picWheel
         '
         Me.picWheel.Image = Global.capstone.My.Resources.Resources.chart
-        Me.picWheel.Location = New System.Drawing.Point(15, 62)
+        Me.picWheel.Location = New System.Drawing.Point(12, 61)
         Me.picWheel.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picWheel.Name = "picWheel"
         Me.picWheel.Size = New System.Drawing.Size(556, 322)
@@ -439,7 +439,7 @@ Partial Class Form1
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1924, 30)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1924, 28)
         Me.MenuStrip1.TabIndex = 65
         Me.MenuStrip1.Text = "MenuStrip1"
         '
