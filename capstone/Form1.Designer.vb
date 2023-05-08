@@ -36,7 +36,7 @@ Partial Class Form1
         Me.btnH = New System.Windows.Forms.Button()
         Me.btnJ = New System.Windows.Forms.Button()
         Me.btnR = New System.Windows.Forms.Button()
-        Me.Button13 = New System.Windows.Forms.Button()
+        Me.btnW = New System.Windows.Forms.Button()
         Me.btnE = New System.Windows.Forms.Button()
         Me.btnQ = New System.Windows.Forms.Button()
         Me.btnC = New System.Windows.Forms.Button()
@@ -207,16 +207,16 @@ Partial Class Form1
         Me.btnR.Text = "R"
         Me.btnR.UseVisualStyleBackColor = True
         '
-        'Button13
+        'btnW
         '
-        Me.Button13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button13.Location = New System.Drawing.Point(597, 494)
-        Me.Button13.Margin = New System.Windows.Forms.Padding(4)
-        Me.Button13.Name = "Button13"
-        Me.Button13.Size = New System.Drawing.Size(100, 28)
-        Me.Button13.TabIndex = 45
-        Me.Button13.Text = "W"
-        Me.Button13.UseVisualStyleBackColor = True
+        Me.btnW.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnW.Location = New System.Drawing.Point(597, 494)
+        Me.btnW.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnW.Name = "btnW"
+        Me.btnW.Size = New System.Drawing.Size(100, 28)
+        Me.btnW.TabIndex = 45
+        Me.btnW.Text = "W"
+        Me.btnW.UseVisualStyleBackColor = True
         '
         'btnE
         '
@@ -447,7 +447,7 @@ Partial Class Form1
         '
         Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OpenToolStripMenuItem})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
-        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(46, 26)
+        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(46, 24)
         Me.FileToolStripMenuItem.Text = "File"
         '
         'OpenToolStripMenuItem
@@ -481,7 +481,7 @@ Partial Class Form1
         Me.Controls.Add(Me.btnH)
         Me.Controls.Add(Me.btnJ)
         Me.Controls.Add(Me.btnR)
-        Me.Controls.Add(Me.Button13)
+        Me.Controls.Add(Me.btnW)
         Me.Controls.Add(Me.btnE)
         Me.Controls.Add(Me.btnQ)
         Me.Controls.Add(Me.btnC)
@@ -519,7 +519,7 @@ Partial Class Form1
     Friend WithEvents btnH As Button
     Friend WithEvents btnJ As Button
     Friend WithEvents btnR As Button
-    Friend WithEvents Button13 As Button
+    Friend WithEvents btnW As Button
     Friend WithEvents btnE As Button
     Friend WithEvents btnQ As Button
     Friend WithEvents btnC As Button

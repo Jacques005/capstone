@@ -14,7 +14,7 @@ Public Class Form1
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         TimerMain.Enabled = True
         Random = Int((Rnd() * 25) + 1)
-        Button1.Text = Random.ToString
+
         Spins = 0
         TickCount = 0
         Tiles = 1
@@ -97,5 +97,73 @@ Public Class Form1
 
     Private Sub lblWord_Click(sender As Object, e As EventArgs) Handles lblWord.Click
 
+    End Sub
+
+    Private Sub btnW_Click(sender As Object, e As EventArgs) Handles btnW.Click
+        btnW.Enabled = False
+    End Sub
+
+    Private Sub btnE_Click(sender As Object, e As EventArgs) Handles btnE.Click
+        btnE.Enabled = False
+    End Sub
+
+    Private Sub btnR_Click(sender As Object, e As EventArgs) Handles btnR.Click
+        btnR.Enabled = False
+    End Sub
+
+    Private Sub btnT_Click(sender As Object, e As EventArgs) Handles btnT.Click
+        btnT.Enabled = False
+    End Sub
+
+    Private Sub btnY_Click(sender As Object, e As EventArgs) Handles btnY.Click
+        btnY.Enabled = False
+    End Sub
+
+    Private Sub btnU_Click(sender As Object, e As EventArgs) Handles btnU.Click
+        btnU.Enabled = False
+    End Sub
+
+    Private Sub btnI_Click(sender As Object, e As EventArgs) Handles btnI.Click
+        btnI.Enabled = False
+    End Sub
+
+    Private Sub btnO_Click(sender As Object, e As EventArgs) Handles btnO.Click
+        btnO.Enabled = False
+    End Sub
+
+    Private Sub btnP_Click(sender As Object, e As EventArgs) Handles btnP.Click
+        btnP.Enabled = False
+    End Sub
+
+    Private Sub btnS_Click(sender As Object, e As EventArgs) Handles btnS.Click
+        btnS.Enabled = False
+    End Sub
+
+    Private Sub btnD_Click(sender As Object, e As EventArgs) Handles btnD.Click
+        btnD.Enabled = False
+    End Sub
+
+    Private Sub btnF_Click(sender As Object, e As EventArgs) Handles btnF.Click
+        btnF.Enabled = False
+    End Sub
+
+    Private Sub btnG_Click(sender As Object, e As EventArgs) Handles btnG.Click
+        btnG.Enabled = False
+    End Sub
+
+    Private Sub btnH_Click(sender As Object, e As EventArgs) Handles btnH.Click
+        btnH.Enabled = False
+    End Sub
+
+    Private Sub btnJ_Click(sender As Object, e As EventArgs) Handles btnJ.Click
+        btnJ.Enabled = False
+    End Sub
+
+    Private Sub btnK_Click(sender As Object, e As EventArgs) Handles btnK.Click
+        btnK.Enabled = False
+    End Sub
+
+    Private Sub btnL_Click(sender As Object, e As EventArgs) Handles btnL.Click
+        btnL.Enabled = False
     End Sub
 End Class
