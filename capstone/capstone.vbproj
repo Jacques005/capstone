@@ -194,5 +194,8 @@
   <ItemGroup>
     <None Include="Resources\chart %2825%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart %2822%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
