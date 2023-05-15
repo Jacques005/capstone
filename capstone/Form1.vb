@@ -3,6 +3,7 @@ Option Explicit On
 Option Infer Off
 
 Imports System.IO
+Imports System.Reflection
 Imports System.Security.Cryptography.X509Certificates
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar
 Public Class Form1
@@ -12,16 +13,26 @@ Public Class Form1
     Dim TickCount As Integer
     Dim FileName As String
     Public Word As String
+    Dim Final As String
+    Dim Turn As Integer = 1
+    Dim Player1 As Integer
+    Dim Player2 As Integer
+    Dim Done As Boolean = False
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Label2.BackColor = Color.Gold
+        Label4.BackColor = Color.Transparent
+    End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         TimerMain.Enabled = True
         Random = Int((Rnd() * 25) + 1)
-        Button1.Text = Replace("hello", "l", "x", 2, 1)
         Spins = 0
         TickCount = 0
         Tiles = 1
         picWheel.Image = My.Resources.chart
         lblBox.Text = String.Empty
+        Done = False
     End Sub
 
     Private Sub TimerMain_Tick(sender As Object, e As EventArgs) Handles TimerMain.Tick
@@ -48,6 +59,7 @@ Public Class Form1
         End If
 
         If TickCount > 126 Then
+            Done = True
             If Random = 1 Or Random = 4 Or Random = 7 Or Random = 10 Or Random = 13 Or Random = 16 Or Random = 19 Or Random = 22 Or Random = 25 Then
                 lblBox.Text = "$1000"
             ElseIf Random = 2 Or Random = 3 Or Random = 12 Or Random = 14 Or Random = 21 Then
@@ -58,6 +70,19 @@ Public Class Form1
                 lblBox.Text = "Skip"
             ElseIf Random = 9 Or Random = 18 Then
                 lblBox.Text = "Broke"
+            End If
+            If TickCount = 127 Then
+                If lblBox.Text = "Broke" Then
+                    If Turn = 1 Then
+                        Player1 = 0
+                        ChangeTurn()
+                    ElseIf Turn = 2 Then
+                        Player2 = 0
+                        ChangeTurn()
+                    End If
+                ElseIf lblBox.Text = "Skip" Then
+                    ChangeTurn()
+                End If
             End If
         End If
     End Sub
@@ -96,18 +121,73 @@ Public Class Form1
         Next
     End Function
     Public Sub showletter(Letter As String)
-        Replace(lblWord.Text, "-", "x", 3, -1)
+        'For y As Integer = 0 To 1 'Word.Count(Function(c As Char) c = Letter)
+        Dim Start As String
+        For x As Integer = 0 To Word.Length
+            If Word.IndexOf(Letter) > x Then
+                Start += lblWord.Text(x)
+            End If
+        Next
+        Final = Replace(lblWord.Text, "-", Letter, Word.IndexOf(Letter) + 1, 1)
+        lblWord.Text = Start + Final
+        'Next
+    End Sub
+    Public Sub ChangeTurn()
+        If Turn = 1 Then
+            Turn = 2
+            Label4.BackColor = Color.Gold
+            Label2.BackColor = Color.Transparent
+        ElseIf Turn = 2 Then
+            Turn = 1
+            Label2.BackColor = Color.Gold
+            Label4.BackColor = Color.Transparent
+        End If
+    End Sub
+    Public Sub CheckPrice()
+        If lblBox.Text = "Broke" Then
+            If Turn = 1 Then
+                Player1 = 0
+                ChangeTurn()
+            ElseIf Turn = 2 Then
+                Player2 = 0
+                ChangeTurn()
+            End If
+        ElseIf lblBox.Text = "Skip" Then
+            ChangeTurn()
+        ElseIf lblBox.Text = "$1000" Then
+            If Turn = 1 Then
+                Player1 += 1000
+            ElseIf Turn = 2 Then
+                Player2 += 1000
+            End If
+        ElseIf lblBox.Text = "$2000" Then
+            If Turn = 1 Then
+                Player1 += 2000
+            ElseIf Turn = 2 Then
+                Player2 += 2000
+            End If
+        ElseIf lblBox.Text = "$5000" Then
+            If Turn = 1 Then
+                Player1 += 5000
+            ElseIf Turn = 2 Then
+                Player2 += 5000
+            End If
+        End If
+        PLayer1box.Text = Player1.ToString("C2")
+        Player2Box.Text = Player2.ToString("C2")
     End Sub
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
-        Me.Visible = False
-        Form2.Visible = True
+        Me.Close()
     End Sub
     Private Sub btnW_Click(sender As Object, e As EventArgs) Handles btnW.Click
         If check("w") = True Then
             btnW.BackColor = Color.Green
             showletter("w")
+            btnW.Enabled = False
+            CheckPrice()
         Else
             btnW.Enabled = False
+            ChangeTurn()
         End If
     End Sub
 
@@ -115,8 +195,11 @@ Public Class Form1
         If check("e") = True Then
             btnE.BackColor = Color.Green
             showletter("e")
+            btnE.Enabled = False
+            CheckPrice()
         Else
             btnE.Enabled = False
+            ChangeTurn()
         End If
     End Sub
 
@@ -124,8 +207,11 @@ Public Class Form1
         If check("r") = True Then
             btnR.BackColor = Color.Green
             showletter("r")
+            btnR.Enabled = False
+            CheckPrice()
         Else
             btnR.Enabled = False
+            ChangeTurn()
         End If
     End Sub
 
@@ -133,8 +219,11 @@ Public Class Form1
         If check("t") = True Then
             btnT.BackColor = Color.Green
             showletter("t")
+            btnT.Enabled = False
+            CheckPrice()
         Else
             btnT.Enabled = False
+            ChangeTurn()
         End If
     End Sub
 
@@ -142,8 +231,11 @@ Public Class Form1
         If check("y") = True Then
             btnY.BackColor = Color.Green
             showletter("y")
+            btnY.Enabled = False
+            CheckPrice()
         Else
             btnY.Enabled = False
+            ChangeTurn()
         End If
     End Sub
 
@@ -151,8 +243,11 @@ Public Class Form1
         If check("u") = True Then
             btnU.BackColor = Color.Green
             showletter("u")
+            btnU.Enabled = False
+            CheckPrice()
         Else
             btnU.Enabled = False
+            ChangeTurn()
         End If
     End Sub
 
@@ -160,8 +255,12 @@ Public Class Form1
         If check("i") = True Then
             btnI.BackColor = Color.Green
             showletter("i")
+            showletter("i")
+            btnI.Enabled = False
+            CheckPrice()
         Else
             btnI.Enabled = False
+            ChangeTurn()
         End If
     End Sub
 
@@ -169,8 +268,11 @@ Public Class Form1
         If check("o") = True Then
             btnO.BackColor = Color.Green
             showletter("o")
+            btnO.Enabled = False
+            CheckPrice()
         Else
             btnO.Enabled = False
+            ChangeTurn()
         End If
     End Sub
 
@@ -178,17 +280,25 @@ Public Class Form1
         If check("p") = True Then
             btnP.BackColor = Color.Green
             showletter("p")
+            btnP.Enabled = False
+            CheckPrice()
         Else
             btnP.Enabled = False
+            ChangeTurn()
         End If
     End Sub
+
 
     Private Sub btnS_Click(sender As Object, e As EventArgs) Handles btnS.Click
         If check("s") = True Then
             btnS.BackColor = Color.Green
+            btnS.Enabled = False
             showletter("s")
+            btnS.Enabled = False
+            CheckPrice()
         Else
             btnS.Enabled = False
+            ChangeTurn()
         End If
     End Sub
 
@@ -196,8 +306,11 @@ Public Class Form1
         If check("d") = True Then
             btnD.BackColor = Color.Green
             showletter("d")
+            btnD.Enabled = False
+            CheckPrice()
         Else
             btnD.Enabled = False
+            ChangeTurn()
         End If
     End Sub
 
@@ -205,8 +318,11 @@ Public Class Form1
         If check("f") = True Then
             btnF.BackColor = Color.Green
             showletter("f")
+            btnF.Enabled = False
+            CheckPrice()
         Else
             btnF.Enabled = False
+            ChangeTurn()
         End If
     End Sub
 
@@ -214,8 +330,11 @@ Public Class Form1
         If check("g") = True Then
             btnG.BackColor = Color.Green
             showletter("g")
+            btnG.Enabled = False
+            CheckPrice()
         Else
             btnG.Enabled = False
+            ChangeTurn()
         End If
     End Sub
 
@@ -223,8 +342,11 @@ Public Class Form1
         If check("h") = True Then
             btnH.BackColor = Color.Green
             showletter("h")
+            btnH.Enabled = False
+            CheckPrice()
         Else
             btnH.Enabled = False
+            ChangeTurn()
         End If
     End Sub
 
@@ -232,8 +354,11 @@ Public Class Form1
         If check("j") = True Then
             btnJ.BackColor = Color.Green
             showletter("j")
+            btnJ.Enabled = False
+            CheckPrice()
         Else
             btnJ.Enabled = False
+            ChangeTurn()
         End If
     End Sub
 
@@ -241,8 +366,11 @@ Public Class Form1
         If check("k") = True Then
             btnK.BackColor = Color.Green
             showletter("k")
+            btnK.Enabled = False
+            CheckPrice()
         Else
             btnK.Enabled = False
+            ChangeTurn()
         End If
     End Sub
 
@@ -250,8 +378,11 @@ Public Class Form1
         If check("l") = True Then
             btnL.BackColor = Color.Green
             showletter("l")
+            btnL.Enabled = False
+            CheckPrice()
         Else
             btnL.Enabled = False
+            ChangeTurn()
         End If
     End Sub
 
@@ -259,8 +390,11 @@ Public Class Form1
         If check("x") = True Then
             btnX.BackColor = Color.Green
             showletter("x")
+            btnX.Enabled = False
+            CheckPrice()
         Else
             btnX.Enabled = False
+            ChangeTurn()
         End If
     End Sub
 
@@ -268,8 +402,11 @@ Public Class Form1
         If check("c") = True Then
             btnC.BackColor = Color.Green
             showletter("c")
+            btnC.Enabled = False
+            CheckPrice()
         Else
             btnC.Enabled = False
+            ChangeTurn()
         End If
     End Sub
 
@@ -277,8 +414,11 @@ Public Class Form1
         If check("v") = True Then
             btnV.BackColor = Color.Green
             showletter("v")
+            btnV.Enabled = False
+            CheckPrice()
         Else
             btnV.Enabled = False
+            ChangeTurn()
         End If
     End Sub
 
@@ -286,8 +426,11 @@ Public Class Form1
         If check("b") = True Then
             btnB.BackColor = Color.Green
             showletter("b")
+            btnB.Enabled = False
+            CheckPrice()
         Else
             btnB.Enabled = False
+            ChangeTurn()
         End If
     End Sub
 
@@ -295,8 +438,11 @@ Public Class Form1
         If check("n") = True Then
             btnN.BackColor = Color.Green
             showletter("n")
+            btnN.Enabled = False
+            CheckPrice()
         Else
             btnN.Enabled = False
+            ChangeTurn()
         End If
     End Sub
 
@@ -304,12 +450,44 @@ Public Class Form1
         If check("m") = True Then
             btnM.BackColor = Color.Green
             showletter("m")
+            btnM.Enabled = False
+            CheckPrice()
         Else
             btnM.Enabled = False
+            ChangeTurn()
         End If
     End Sub
-
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.Visible = False
+    Private Sub btnAA_Click(sender As Object, e As EventArgs) Handles btnAA.Click
+        If check("a") = True Then
+            btnAA.BackColor = Color.Green
+            showletter("a")
+            btnAA.Enabled = False
+            CheckPrice()
+        Else
+            btnAA.Enabled = False
+            ChangeTurn()
+        End If
+    End Sub
+    Private Sub bntQQ_Click(sender As Object, e As EventArgs) Handles bntQQ.Click
+        If check("q") = True Then
+            bntQQ.BackColor = Color.Green
+            showletter("q")
+            bntQQ.Enabled = False
+            CheckPrice()
+        Else
+            bntQQ.Enabled = False
+            ChangeTurn()
+        End If
+    End Sub
+    Private Sub btnZZ_Click(sender As Object, e As EventArgs) Handles btnZZ.Click
+        If check("z") = True Then
+            btnZZ.BackColor = Color.Green
+            showletter("z")
+            btnZZ.Enabled = False
+            CheckPrice()
+        Else
+            btnZZ.Enabled = False
+            ChangeTurn()
+        End If
     End Sub
 End Class
