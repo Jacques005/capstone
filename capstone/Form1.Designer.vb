@@ -68,6 +68,7 @@ Partial Class Form1
         Me.btnAA = New System.Windows.Forms.Button()
         Me.bntQQ = New System.Windows.Forms.Button()
         Me.btnZZ = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.picWheel, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -504,11 +505,21 @@ Partial Class Form1
         Me.btnZZ.Text = "Z"
         Me.btnZZ.UseVisualStyleBackColor = True
         '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(177, 550)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(132, 45)
+        Me.Button2.TabIndex = 74
+        Me.Button2.Text = "Button2"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1299, 609)
+        Me.ClientSize = New System.Drawing.Size(1299, 645)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.btnZZ)
         Me.Controls.Add(Me.bntQQ)
         Me.Controls.Add(Me.btnAA)
@@ -605,4 +616,5 @@ Partial Class Form1
     Friend WithEvents btnAA As Button
     Friend WithEvents bntQQ As Button
     Friend WithEvents btnZZ As Button
+    Friend WithEvents Button2 As Button
 End Class
