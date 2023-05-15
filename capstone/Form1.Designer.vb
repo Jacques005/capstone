@@ -49,7 +49,7 @@ Partial Class Form1
         Me.btnF = New System.Windows.Forms.Button()
         Me.btnA = New System.Windows.Forms.Button()
         Me.btnM = New System.Windows.Forms.Button()
-        Me.btnExit = New System.Windows.Forms.Button()
+        Me.btnBack = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.lstRandom = New System.Windows.Forms.ListBox()
         Me.lblBox = New System.Windows.Forms.Label()
@@ -331,15 +331,15 @@ Partial Class Form1
         Me.btnM.Text = "M"
         Me.btnM.UseVisualStyleBackColor = True
         '
-        'btnExit
+        'btnBack
         '
-        Me.btnExit.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnExit.Location = New System.Drawing.Point(971, 495)
-        Me.btnExit.Name = "btnExit"
-        Me.btnExit.Size = New System.Drawing.Size(189, 46)
-        Me.btnExit.TabIndex = 32
-        Me.btnExit.Text = "E&xit"
-        Me.btnExit.UseVisualStyleBackColor = True
+        Me.btnBack.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBack.Location = New System.Drawing.Point(971, 495)
+        Me.btnBack.Name = "btnBack"
+        Me.btnBack.Size = New System.Drawing.Size(189, 46)
+        Me.btnBack.TabIndex = 32
+        Me.btnBack.Text = "Back"
+        Me.btnBack.UseVisualStyleBackColor = True
         '
         'Button1
         '
@@ -549,7 +549,7 @@ Partial Class Form1
         Me.Controls.Add(Me.btnF)
         Me.Controls.Add(Me.btnA)
         Me.Controls.Add(Me.btnM)
-        Me.Controls.Add(Me.btnExit)
+        Me.Controls.Add(Me.btnBack)
         Me.Name = "Form1"
         Me.Text = "Form1"
         Me.MenuStrip1.ResumeLayout(False)
@@ -586,7 +586,7 @@ Partial Class Form1
     Friend WithEvents btnF As Button
     Friend WithEvents btnA As Button
     Friend WithEvents btnM As Button
-    Friend WithEvents btnExit As Button
+    Friend WithEvents btnBack As Button
     Friend WithEvents picWheel As PictureBox
     Friend WithEvents Button1 As Button
     Friend WithEvents lstRandom As ListBox

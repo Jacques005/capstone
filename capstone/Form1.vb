@@ -176,8 +176,9 @@ Public Class Form1
         PLayer1box.Text = Player1.ToString("C2")
         Player2Box.Text = Player2.ToString("C2")
     End Sub
-    Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
-        Me.Close()
+    Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
+        Me.Visible = False
+        Form2.Visible = True
     End Sub
     Private Sub btnW_Click(sender As Object, e As EventArgs) Handles btnW.Click
         If check("w") = True Then
@@ -187,6 +188,7 @@ Public Class Form1
             CheckPrice()
         Else
             btnW.Enabled = False
+            btnW.BackColor = Color.Red
             ChangeTurn()
         End If
     End Sub
@@ -199,6 +201,7 @@ Public Class Form1
             CheckPrice()
         Else
             btnE.Enabled = False
+            btnE.BackColor = Color.Red
             ChangeTurn()
         End If
     End Sub
@@ -211,6 +214,7 @@ Public Class Form1
             CheckPrice()
         Else
             btnR.Enabled = False
+            btnR.BackColor = Color.Red
             ChangeTurn()
         End If
     End Sub
@@ -223,6 +227,7 @@ Public Class Form1
             CheckPrice()
         Else
             btnT.Enabled = False
+            btnT.BackColor = Color.Red
             ChangeTurn()
         End If
     End Sub
@@ -235,6 +240,7 @@ Public Class Form1
             CheckPrice()
         Else
             btnY.Enabled = False
+            btnY.BackColor = Color.Red
             ChangeTurn()
         End If
     End Sub
@@ -247,6 +253,7 @@ Public Class Form1
             CheckPrice()
         Else
             btnU.Enabled = False
+            btnU.BackColor = Color.Red
             ChangeTurn()
         End If
     End Sub
@@ -260,6 +267,7 @@ Public Class Form1
             CheckPrice()
         Else
             btnI.Enabled = False
+            btnI.BackColor = Color.Red
             ChangeTurn()
         End If
     End Sub
@@ -272,6 +280,7 @@ Public Class Form1
             CheckPrice()
         Else
             btnO.Enabled = False
+            btnO.BackColor = Color.Red
             ChangeTurn()
         End If
     End Sub
@@ -284,6 +293,7 @@ Public Class Form1
             CheckPrice()
         Else
             btnP.Enabled = False
+            btnP.BackColor = Color.Red
             ChangeTurn()
         End If
     End Sub
@@ -298,6 +308,7 @@ Public Class Form1
             CheckPrice()
         Else
             btnS.Enabled = False
+            btnS.BackColor = Color.Red
             ChangeTurn()
         End If
     End Sub
@@ -310,6 +321,7 @@ Public Class Form1
             CheckPrice()
         Else
             btnD.Enabled = False
+            btnD.BackColor = Color.Red
             ChangeTurn()
         End If
     End Sub
@@ -322,6 +334,7 @@ Public Class Form1
             CheckPrice()
         Else
             btnF.Enabled = False
+            btnF.BackColor = Color.Red
             ChangeTurn()
         End If
     End Sub
@@ -334,6 +347,7 @@ Public Class Form1
             CheckPrice()
         Else
             btnG.Enabled = False
+            btnG.BackColor = Color.Red
             ChangeTurn()
         End If
     End Sub
@@ -346,6 +360,7 @@ Public Class Form1
             CheckPrice()
         Else
             btnH.Enabled = False
+            btnH.BackColor = Color.Red
             ChangeTurn()
         End If
     End Sub
@@ -358,6 +373,7 @@ Public Class Form1
             CheckPrice()
         Else
             btnJ.Enabled = False
+            btnJ.BackColor = Color.Red
             ChangeTurn()
         End If
     End Sub
@@ -370,6 +386,7 @@ Public Class Form1
             CheckPrice()
         Else
             btnK.Enabled = False
+            btnK.BackColor = Color.Red
             ChangeTurn()
         End If
     End Sub
@@ -382,6 +399,7 @@ Public Class Form1
             CheckPrice()
         Else
             btnL.Enabled = False
+            btnL.BackColor = Color.Red
             ChangeTurn()
         End If
     End Sub
@@ -394,6 +412,7 @@ Public Class Form1
             CheckPrice()
         Else
             btnX.Enabled = False
+            btnX.BackColor = Color.Red
             ChangeTurn()
         End If
     End Sub
@@ -406,6 +425,7 @@ Public Class Form1
             CheckPrice()
         Else
             btnC.Enabled = False
+            btnC.BackColor = Color.Red
             ChangeTurn()
         End If
     End Sub
@@ -418,6 +438,7 @@ Public Class Form1
             CheckPrice()
         Else
             btnV.Enabled = False
+            btnV.BackColor = Color.Red
             ChangeTurn()
         End If
     End Sub
@@ -430,6 +451,7 @@ Public Class Form1
             CheckPrice()
         Else
             btnB.Enabled = False
+            btnB.BackColor = Color.Red
             ChangeTurn()
         End If
     End Sub
@@ -442,6 +464,7 @@ Public Class Form1
             CheckPrice()
         Else
             btnN.Enabled = False
+            btnN.BackColor = Color.Red
             ChangeTurn()
         End If
     End Sub
@@ -454,6 +477,7 @@ Public Class Form1
             CheckPrice()
         Else
             btnM.Enabled = False
+            btnM.BackColor = Color.Red
             ChangeTurn()
         End If
     End Sub
@@ -465,6 +489,7 @@ Public Class Form1
             CheckPrice()
         Else
             btnAA.Enabled = False
+            btnAA.BackColor = Color.Red
             ChangeTurn()
         End If
     End Sub
@@ -487,6 +512,7 @@ Public Class Form1
             CheckPrice()
         Else
             btnZZ.Enabled = False
+            btnZZ.BackColor = Color.Red
             ChangeTurn()
         End If
     End Sub
