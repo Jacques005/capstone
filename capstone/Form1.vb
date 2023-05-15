@@ -12,6 +12,7 @@ Public Class Form1
     Dim TickCount As Integer
     Dim FileName As String
     Public Word As String
+
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         TimerMain.Enabled = True
         Random = Int((Rnd() * 25) + 1)
@@ -98,7 +99,8 @@ Public Class Form1
         Replace(lblWord.Text, "-", "x", 3, -1)
     End Sub
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
-        Me.Close()
+        Me.Visible = False
+        Form2.Visible = True
     End Sub
     Private Sub btnW_Click(sender As Object, e As EventArgs) Handles btnW.Click
         If check("w") = True Then
@@ -305,5 +307,9 @@ Public Class Form1
         Else
             btnM.Enabled = False
         End If
+    End Sub
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.Visible = False
     End Sub
 End Class
